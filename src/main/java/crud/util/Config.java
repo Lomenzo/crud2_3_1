@@ -15,6 +15,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
@@ -23,20 +24,25 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:db.properties")
-@PersistenceContext
+//@EnableTransactionManagement
 @ComponentScan(value = "crud")
 public class Config {
 
-    @Autowired
-    private Environment env;
+    //@Autowired
+    //private Environment env;
 
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getProperty("db.driver"));
-        dataSource.setUrl(env.getProperty("db.url"));
-        dataSource.setUsername(env.getProperty("db.username"));
-        dataSource.setPassword(env.getProperty("db.password"));
+//        dataSource.setDriverClassName(env.getProperty("db.driver"));
+//        dataSource.setUrl(env.getProperty("db.url"));
+//        dataSource.setUsername(env.getProperty("db.username"));
+//        dataSource.setPassword(env.getProperty("db.password"));
+
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost/dedusers");
+        dataSource.setUsername("root");
+        dataSource.setPassword("1Dothisf");
         return dataSource;
     }
 
@@ -47,8 +53,11 @@ public class Config {
         lfb.setDataSource(getDataSource());
 
         Properties settings = new Properties();
-        settings.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
-        settings.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+//        settings.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+//        settings.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+
+        settings.put(org.hibernate.cfg.Environment.SHOW_SQL, "true");
+        settings.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "update");
 
         lfb.setJpaProperties(settings);
         //lfb.setPackagesToScan( "crud" );
