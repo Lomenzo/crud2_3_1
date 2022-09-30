@@ -1,4 +1,4 @@
-package crud;
+/*package crud;
 
 import crud.model.User;
 //import crud.util.Config;
@@ -41,5 +41,5 @@ public class Main {
 //        em.persist(user1);
 //        em.getTransaction().commit();
 
-    }
-}
+//    }
+//}

@@ -1,4 +1,4 @@
-package crud.util;
+/*package crud.util;
 
 import crud.model.User;
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-@Configuration
+//@Configuration
 @PropertySource("classpath:db.properties")
 @ComponentScan(value = "crud")
 public class Util {
@@ -157,3 +157,4 @@ public class Util {
     }
 
 }
+*/
