@@ -25,8 +25,6 @@ public class UserController {
         List<User> usersList = new ArrayList<>();
         usersList.add(userService.testUserMethod());
 
-
-        //List<Car> newCarList = (carService.getList((count > cars.size()) ? 5 : count, cars));
         model.addAttribute("users", usersList);
         return "pageUsers";
     }

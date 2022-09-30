@@ -1,9 +1,8 @@
-/*package crud.util;
+package crud.util;
 
 import crud.model.User;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 
@@ -14,30 +13,10 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-//@Configuration
+@Configuration
 @PropertySource("classpath:db.properties")
 @ComponentScan(value = "crud")
 public class Util {
-
-
-    //сделать EntityManager без необходимости каждый раз передавать в него url-login-pass от БД
-    //попытаться вообще не создавать экземпляры EntityManager а делать          EntityManager em = getEntityManager();         em.getTransaction().begin();
-
-    //@PersistenceContext
-    //EntityManager entityManager;
-
-//    EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.baeldung.movie_catalog");
-//
-//    public EntityManager getEntityManager() {
-//        return emf.createEntityManager();
-//    }
-//
-
-    private final ApplicationContext applicationContext;
-
-    public Util (ApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
-    }
 
     @Autowired
     private Environment env;
@@ -155,6 +134,4 @@ public class Util {
         EntityManagerFactory emf = createEntityManagerFac();
         return emf.createEntityManager();
     }
-
 }
-*/
