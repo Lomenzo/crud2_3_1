@@ -2,6 +2,10 @@ package crud.util;
 
 import crud.model.User;
 import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.*;
+import org.springframework.core.env.Environment;
 
 import javax.persistence.*;
 import javax.persistence.spi.*;
@@ -10,28 +14,41 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-
+@Configuration
+@PropertySource("classpath:db.properties")
+@ComponentScan(value = "crud")
 public class Util {
+
+
+    //сделать EntityManager без необходимости каждый раз передавать в него url-login-pass от БД
+    //попытаться вообще не создавать экземпляры EntityManager а делать          EntityManager em = getEntityManager();         em.getTransaction().begin();
 
     //@PersistenceContext
     //EntityManager entityManager;
+
 //    EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.baeldung.movie_catalog");
 //
 //    public EntityManager getEntityManager() {
 //        return emf.createEntityManager();
 //    }
 //
-//    public void getProps() {
-//        emf.getProperties();
-//        System.out.println(emf.getProperties());
-//    }
 
-    public EntityManager createEntityManager(String dbUrl, String dbUser, String dbPassword) {
+    private final ApplicationContext applicationContext;
+
+    public Util (ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
+    @Autowired
+    private Environment env;
+
+    @Bean
+    public EntityManagerFactory createEntityManagerFac() {
 
         Properties props = new Properties();
-        props.put("hibernate.connection.url", dbUrl);
-        props.put("hibernate.connection.username", dbUser);
-        props.put("hibernate.connection.password", dbPassword);
+        props.put("hibernate.connection.url", env.getProperty("db.url"));
+        props.put("hibernate.connection.username", env.getProperty("db.username"));
+        props.put("hibernate.connection.password", env.getProperty("db.password"));
 
         PersistenceUnitInfo persistenceUnitInfo = new PersistenceUnitInfo() {
 
@@ -130,6 +147,13 @@ public class Util {
         EntityManagerFactory entityManagerFactory = hibernatePersistenceProvider
                 .createContainerEntityManagerFactory(persistenceUnitInfo, settings);
 
-        return entityManagerFactory.createEntityManager();
+        return entityManagerFactory;
     }
+
+    @Bean
+    public EntityManager getEntityManager() {
+        EntityManagerFactory emf = createEntityManagerFac();
+        return emf.createEntityManager();
+    }
+
 }

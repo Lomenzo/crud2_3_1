@@ -1,9 +1,11 @@
 package crud.model;
 
 import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
+@Component
 @Entity /*(name = "crudUser")*/
 @Table(name = "crudUsersTable")
 public class User {
