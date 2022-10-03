@@ -16,6 +16,23 @@
     </style>
 </head>
 <body>
+    <h1>Create a User:</h1>
+    <form th:action="@{/users}"
+    th:object="${userForm}" method="POST">
+        NAME:
+        <input type="text" th:field="${name}" />
+        <br/>
+        LAST NAME:
+        <input type="text" th:field="${lastName}" />
+        <br/>
+        SALARY:
+        <input type="number" th:field="${salary}" />
+        <br/>
+        Now you can
+        <input type="submit" value="Create" />
+    </form>
+<br>
+<br>
 <table>
     <tr>
         <td>name</td>

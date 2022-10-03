@@ -9,12 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 3.2 web not work with EM">
+    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 4 web work with EM">
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/model/UserForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/util/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/util/DBConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/util/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/util/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/util/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/pageUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/pageUsers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/util/DBConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/util/DBConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,25 +50,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Idea/IdeaProjects/crud-SS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.25747126",
-    "spring.configuration.checksum": "02271906619c8091bd673d8cdf1a30ae"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Idea/IdeaProjects/crud-SS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.25747126&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;02271906619c8091bd673d8cdf1a30ae&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/users" />
@@ -171,7 +173,8 @@
       <workItem from="1664342017332" duration="17993000" />
       <workItem from="1664448262113" duration="13950000" />
       <workItem from="1664523155910" duration="17973000" />
-      <workItem from="1664687510020" duration="3486000" />
+      <workItem from="1664687510020" duration="11471000" />
+      <workItem from="1664779753103" duration="7053000" />
     </task>
     <task id="LOCAL-00001" summary="v 1.0 user+pom">
       <created>1664349695739</created>
@@ -208,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664536173529</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="v 4 web work with EM">
+      <created>1664712046831</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664712046831</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +241,7 @@
     <MESSAGE value="v 3.0 try tomcat-web" />
     <MESSAGE value="v 3.1 try tomcat-web (controllers+service work, 1 config)" />
     <MESSAGE value="v 3.2 web not work with EM" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 3.2 web not work with EM" />
+    <MESSAGE value="v 4 web work with EM" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 4 web work with EM" />
   </component>
 </project>
