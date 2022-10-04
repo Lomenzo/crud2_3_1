@@ -1,10 +1,21 @@
 package crud.model;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserForm {
     private String name;
     private String lastName;
     private int salary;
+
+    public UserForm() {
+    }
+
+    public UserForm(String name, String lastName, int salary) {
+        this.name = name;
+        this.lastName = lastName;
+        this.salary = salary;
+    }
 
     public String getName() {
         return name;

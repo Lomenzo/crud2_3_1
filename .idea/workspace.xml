@@ -9,14 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 4 web work with EM">
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/model/UserForm.java" afterDir="false" />
+    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 4.1 get method work, post not work">
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testUserpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/crud/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/pageUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/pageUsers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/util/DBConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/util/DBConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/model/UserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/model/UserForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -71,7 +72,7 @@
 }</component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/users" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/test" />
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -174,7 +175,8 @@
       <workItem from="1664448262113" duration="13950000" />
       <workItem from="1664523155910" duration="17973000" />
       <workItem from="1664687510020" duration="11471000" />
-      <workItem from="1664779753103" duration="7053000" />
+      <workItem from="1664779753103" duration="12641000" />
+      <workItem from="1664811844602" duration="13434000" />
     </task>
     <task id="LOCAL-00001" summary="v 1.0 user+pom">
       <created>1664349695739</created>
@@ -218,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664712046831</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="v 4.1 get method work, post not work">
+      <created>1664806291984</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664806291984</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +251,7 @@
     <MESSAGE value="v 3.1 try tomcat-web (controllers+service work, 1 config)" />
     <MESSAGE value="v 3.2 web not work with EM" />
     <MESSAGE value="v 4 web work with EM" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 4 web work with EM" />
+    <MESSAGE value="v 4.1 get method work, post not work" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 4.1 get method work, post not work" />
   </component>
 </project>
