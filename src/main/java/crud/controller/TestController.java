@@ -40,6 +40,51 @@ public class TestController {
         return "testPage";
     }
 
+//    @GetMapping("/edit/{id}")
+//    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+//
+//        User userFinded = userService.findUserByID(id);
+//        //        .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+//
+//        model.addAttribute("userFinded", userFinded);
+//        return "updateUserPage";
+//    }
+
+//    @PostMapping("/update/{id}")
+//    public String updateUser(@PathVariable("id") long id, @Valid User user, BindingResult result, Model model) {
+//        if (result.hasErrors()) {
+//            user.setId(id);
+//            return "updateUserPage";
+//        }
+//
+//        userRepository.save(user);
+//        return "redirect:/index";
+//    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable("id") long id, Model model) {
+        User user = userService.findUserByID(id);
+        //        .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        userService.deleteUser(user);
+        return "deletedUserPage";
+    }
+
+
+
+
+
+
+
+
+
+//    @PostMapping(value = "/test")
+//    public String deletePostMethod(Model model, @ModelAttribute("userID") Long userID, ModelMap modelMap) {
+//        model.addAttribute("userID", userID);
+//        userService.deleteUserByID(userID);
+//        List<User> usersList = userService.getAllUsersTable();
+//        modelMap.addAttribute("users", usersList);
+//        return "testPage";
+//    }
 //    @GetMapping(value = "/userlist")
 //    public String postUsers(ModelMap model) {
 //        List<User> usersList = userService.getAllUsersTable();

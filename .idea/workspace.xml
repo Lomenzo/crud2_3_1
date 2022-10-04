@@ -9,15 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 4.1 get method work, post not work">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testUserpage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/crud/controller/TestController.java" afterDir="false" />
+    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 5 users add, need ID for delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/pageUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/pageUsers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/model/UserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/model/UserForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testUserpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testUserpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +174,7 @@
       <workItem from="1664523155910" duration="17973000" />
       <workItem from="1664687510020" duration="11471000" />
       <workItem from="1664779753103" duration="12641000" />
-      <workItem from="1664811844602" duration="13434000" />
+      <workItem from="1664811844602" duration="22149000" />
     </task>
     <task id="LOCAL-00001" summary="v 1.0 user+pom">
       <created>1664349695739</created>
@@ -227,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664806291984</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="v 5 users add, need ID for delete">
+      <created>1664864613904</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664864613904</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +257,7 @@
     <MESSAGE value="v 3.2 web not work with EM" />
     <MESSAGE value="v 4 web work with EM" />
     <MESSAGE value="v 4.1 get method work, post not work" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 4.1 get method work, post not work" />
+    <MESSAGE value="v 5 users add, need ID for delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 5 users add, need ID for delete" />
   </component>
 </project>

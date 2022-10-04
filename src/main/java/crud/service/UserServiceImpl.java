@@ -38,13 +38,30 @@ public class UserServiceImpl implements UserService{
     }
 
     @Transactional
-    public void deleteUser(User userInn) {
+    public User findUserByID(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         em.getTransaction().begin();
-        User user = em.find(User.class, userInn.getId());
+        User user = em.find(User.class, id);
+        em.getTransaction().commit();
+        return user;
+    }
+
+    @Transactional
+    public void deleteUser(User userInn){
+        EntityManager em = entityManagerFactory.createEntityManager();
+        em.getTransaction().begin();
+        em.remove(em.merge(userInn));
+        em.getTransaction().commit();
+    }
+
+    @Transactional
+    public void deleteUserByID(Long id) {
+        EntityManager em = entityManagerFactory.createEntityManager();
+        em.getTransaction().begin();
+        User user = em.find(User.class, id);
         em.remove(user);
         em.getTransaction().commit();
-        System.out.println("User DELETED from DataBase:  " + userInn.getId() + userInn.getName() + userInn.getLastName() + userInn.getSalary());
+        System.out.println("User DELETED from DataBase:  " + user.getId() + user.getName() + user.getLastName() + user.getSalary());
     }
 
     public User testUserMethod(User userInn) {

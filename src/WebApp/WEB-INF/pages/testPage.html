@@ -11,7 +11,7 @@
   <p>Name: <input type="text" th:field="*{name}" /></p>
   <p>LastName: <input type="text" th:field="*{lastName}" /></p>
   <p>Salary: <input type="text" th:field="*{salary}" /></p>
-  <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+  <p><input type="submit" value="Submit" /></p>
 </form>
 <br>
 <table>
@@ -22,10 +22,11 @@
     <td>salary</td>
   </tr>
   <tr th:each="lst : ${users}">
-    <td th:utext="${lst.ID}">ID</td>
+    <td th:utext="${lst.id}">ID</td>
     <td th:utext="${lst.name}">name</td>
     <td th:utext="${lst.lastName}">lastName</td>
     <td th:utext="${lst.salary}">salary</td>
+    <td><a th:href="@{/delete/{id}(id=${lst.id})}">Delete this User</a></td>
   </tr>
 </table>
 </body>
