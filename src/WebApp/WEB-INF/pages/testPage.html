@@ -6,12 +6,12 @@
   <title></title>
 </head>
 <body>
-<h1>Form</h1>
+<h1>Add new User</h1>
 <form action="#" th:action="@{/test}" th:object="${userFormer}" method="post">
   <p>Name: <input type="text" th:field="*{name}" /></p>
   <p>LastName: <input type="text" th:field="*{lastName}" /></p>
   <p>Salary: <input type="text" th:field="*{salary}" /></p>
-  <p><input type="submit" value="Submit" /></p>
+  <p><input type="submit" value="Create" /></p>
 </form>
 <br>
 <table>
@@ -26,7 +26,8 @@
     <td th:utext="${lst.name}">name</td>
     <td th:utext="${lst.lastName}">lastName</td>
     <td th:utext="${lst.salary}">salary</td>
-    <td><a th:href="@{/delete/{id}(id=${lst.id})}">Delete this User</a></td>
+    <td><a th:href="@{/delete/{id}(id=${lst.id})}">Delete</a></td>
+    <td><a th:href="@{/edit/{id}(id=${lst.id})}">Edit</a></td>
   </tr>
 </table>
 </body>

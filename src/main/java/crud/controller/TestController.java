@@ -40,26 +40,32 @@ public class TestController {
         return "testPage";
     }
 
-//    @GetMapping("/edit/{id}")
-//    public String showUpdateForm(@PathVariable("id") long id, Model model) {
-//
-//        User userFinded = userService.findUserByID(id);
-//        //        .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
-//
-//        model.addAttribute("userFinded", userFinded);
-//        return "updateUserPage";
-//    }
 
-//    @PostMapping("/update/{id}")
-//    public String updateUser(@PathVariable("id") long id, @Valid User user, BindingResult result, Model model) {
+
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+        User userFinded = userService.findUserByID(id);
+        //        .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("userFinded", new UserForm());
+        return "updateUserPage";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String updateUser(@PathVariable("id") long id, @ModelAttribute("userFinded") UserForm userFinded, /*@Valid User user, BindingResult result, */Model model) {
 //        if (result.hasErrors()) {
 //            user.setId(id);
 //            return "updateUserPage";
 //        }
-//
-//        userRepository.save(user);
-//        return "redirect:/index";
-//    }
+        model.addAttribute("userFinded", userFinded);
+        User userForUpdate = new User(userFinded.getName(), userFinded.getLastName(), userFinded.getSalary());
+        userForUpdate.setId(id);
+        userService.saveUser(userForUpdate);
+        return "updateUserPage";
+    }
+
+
+
+
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") long id, Model model) {
