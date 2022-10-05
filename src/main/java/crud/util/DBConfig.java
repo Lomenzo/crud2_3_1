@@ -28,7 +28,7 @@ public class DBConfig {
   @Autowired
   private Environment env;
 
-  @Bean(name = "EMF")
+  @Bean
   public LocalContainerEntityManagerFactoryBean getEntityManagerFactoryBean() {
     Properties props = new Properties();
     props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
