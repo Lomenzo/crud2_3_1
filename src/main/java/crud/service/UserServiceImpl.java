@@ -32,15 +32,13 @@ public class UserServiceImpl implements UserService{
     public void saveUser(User userInn) {
         EntityManager em = entityManagerFactory.createEntityManager();
         em.getTransaction().begin();
-//        em.((em.contains(userInn)) ? persist
-        em.persist(userInn);
-//        em.
-//        if (em.contains(userInn)) {
-//            em.saveOrUpdate(userInn);
-//        } else {
-//            em.persist(userInn);
-//        }
-        //saveOrUpdate if not transient
+        if (userInn.getId() == null) {
+            em.persist(userInn);
+        } else {
+            if (!em.contains(userInn)) {
+                em.merge(userInn);
+            }
+        }
         em.getTransaction().commit();
         System.out.println("User SAVED to DataBase:  " + userInn.getId() + userInn.getName() + userInn.getLastName() + userInn.getSalary());
     }

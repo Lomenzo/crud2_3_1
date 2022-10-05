@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 6 deleted work, need update button">
-      <change afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/updateUserPage.html" afterDir="false" />
+    <list default="true" id="d7c13f73-d189-4fc1-9777-3a2d2b0e7904" name="Changes" comment="v 6.1 need update-method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebApp/WEB-INF/pages/testPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +170,8 @@
       <workItem from="1664523155910" duration="17973000" />
       <workItem from="1664687510020" duration="11471000" />
       <workItem from="1664779753103" duration="12641000" />
-      <workItem from="1664811844602" duration="29042000" />
+      <workItem from="1664811844602" duration="29151000" />
+      <workItem from="1664950507355" duration="1147000" />
     </task>
     <task id="LOCAL-00001" summary="v 1.0 user+pom">
       <created>1664349695739</created>
@@ -238,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664873710052</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v 6.1 need update-method">
+      <created>1664882278383</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664882278383</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +270,7 @@
     <MESSAGE value="v 4.1 get method work, post not work" />
     <MESSAGE value="v 5 users add, need ID for delete" />
     <MESSAGE value="v 6 deleted work, need update button" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 6 deleted work, need update button" />
+    <MESSAGE value="v 6.1 need update-method" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 6.1 need update-method" />
   </component>
 </project>
