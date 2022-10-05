@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Add new User</h1>
-<form action="#" th:action="@{/test}" th:object="${userFormer}" method="post">
+<form action="#" th:action="@{/userApp}" th:object="${userFormer}" method="post">
   <p>Name: <input type="text" th:field="*{name}" /></p>
   <p>LastName: <input type="text" th:field="*{lastName}" /></p>
   <p>Salary: <input type="text" th:field="*{salary}" /></p>

@@ -7,64 +7,63 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class UserController {
-
     final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping(value = "/users")
-    public String postUsers(ModelMap model) {
+    @GetMapping(value = "/userApp")
+    public String showUserForm(Model model, ModelMap modelMap) {
+        model.addAttribute("userFormer", new UserForm());
         List<User> usersList = userService.getAllUsersTable();
-        model.addAttribute("users", usersList);
-        return "pageUsers";
+        modelMap.addAttribute("users", usersList);
+        return "userPage";
     }
 
-    @GetMapping(value = "/index")
-    public String showAddPersonPage(Model model) {
-
-        UserForm userForm = new UserForm();
-        model.addAttribute("userForm", userForm);
-
-        return "pageUsers";
-    }
-
-    @PostMapping(value = "/index")
-    public String saveUser(Model model, @ModelAttribute("userForm") UserForm userForm) {
-        model.addAttribute("userForm", userForm);
+    @PostMapping(value = "/userApp")
+    public String addUserPostMethod(Model model, @ModelAttribute("userFormer") UserForm userForm, ModelMap modelMap) {
+        model.addAttribute("userFormer", userForm);
         String name = userForm.getName();
         String lastName = userForm.getLastName();
         int salary = userForm.getSalary();
         User newUser = new User(name,lastName,salary);
         userService.saveUser(newUser);
-        //List<UserForm> userFormList = new ArrayList<>();
-        //userFormList.add(userForm);
         List<User> usersList = userService.getAllUsersTable();
-        //model.addAttribute("userForm", userForm);
-        return "pageUsers";
+        modelMap.addAttribute("users", usersList);
+        return "userPage";
     }
 
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+        User userFinded = userService.findUserByID(id);
+        //        .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("userFinded", new UserForm());
+        return "updateUserPage";
+    }
 
-//    @GetMapping(value = "/users")
-//    public String postUsers(ModelMap model) {
-//
-//        List<User> usersList = new ArrayList<>();
-//        User user1 = new User("petrykin", "imka", 5000);
-//
-//        usersList.add(user1);
-//        userService.saveUser(user1);
-//
-//        usersList.add(userService.testUserMethod(user1));
-//        model.addAttribute("users", usersList);
-//        return "pageUsers";
-//    }
+    @PostMapping("/update/{id}")
+    public String updateUser(@PathVariable("id") long id, @ModelAttribute("userFinded") UserForm userFinded, /*@Valid User user, BindingResult result, */Model model) {
+//        if (result.hasErrors()) {
+//            user.setId(id);
+//            return "updateUserPage";
+//        }
+        model.addAttribute("userFinded", userFinded);
+        User userForUpdate = new User(userFinded.getName(), userFinded.getLastName(), userFinded.getSalary());
+        userForUpdate.setId(id);
+        userService.saveUser(userForUpdate);
+        return "updateUserPage";
+    }
 
-
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable("id") long id, Model model) {
+        User user = userService.findUserByID(id);
+        //        .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        userService.deleteUser(user);
+        return "deletedUserPage";
+    }
 }
