@@ -6,11 +6,11 @@
 </head>
 <body>
 <h1>Enter the new info for this User</h1>
-<form action="#" th:action="@{/edit/{id}(id=${id})}" th:object="${userFinded}" method="post">
+<form action="#" th:action="@{/update/{id}(id=${id})}" th:object="${userFinded}" method="post">
     <p>Name: <input type="text" th:field="${userFinded.name}" /></p>
     <p>LastName: <input type="text" th:field="${userFinded.lastName}" /></p>
     <p>Salary: <input type="text" th:field="${userFinded.salary}" /></p>
-    <p><input type="submit" value="Submit" /></p>
+    <p><input type="submit" value="Affirm edit" /></p>
 </form>
 <br>
 <a th:href="@{/test}">Return</a>

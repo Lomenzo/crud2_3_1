@@ -12,7 +12,6 @@ import java.util.List;
 
 @Controller
 public class TestController {
-
     final UserService userService;
 
     public TestController(UserService userService) {
@@ -40,8 +39,6 @@ public class TestController {
         return "testPage";
     }
 
-
-
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         User userFinded = userService.findUserByID(id);
@@ -50,7 +47,7 @@ public class TestController {
         return "updateUserPage";
     }
 
-    @PostMapping("/edit/{id}")
+    @PostMapping("/update/{id}")
     public String updateUser(@PathVariable("id") long id, @ModelAttribute("userFinded") UserForm userFinded, /*@Valid User user, BindingResult result, */Model model) {
 //        if (result.hasErrors()) {
 //            user.setId(id);
@@ -62,10 +59,6 @@ public class TestController {
         userService.saveUser(userForUpdate);
         return "updateUserPage";
     }
-
-
-
-
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") long id, Model model) {
